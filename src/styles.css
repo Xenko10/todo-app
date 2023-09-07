@@ -1,0 +1,147 @@
+body {
+  background: rgb(213, 254, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(213, 254, 255, 1) 0%,
+    rgba(213, 254, 255, 1) 20%,
+    rgba(177, 233, 245, 1) 100%
+  );
+}
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-display {
+  width: 37.5rem;
+  border-radius: 2rem;
+  background-color: white;
+}
+
+h1 {
+  background: rgb(0, 242, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 242, 255, 1) 0%,
+    rgba(0, 182, 255, 1) 100%
+  );
+
+  margin: 0px;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 2rem;
+
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.item {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 1.75rem;
+  color: #4b6982;
+  overflow-wrap: break-word;
+
+  max-width: 25rem;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0px;
+}
+
+.item-time {
+  padding-top: 0.75rem;
+  color: #bababa;
+  font-size: 1.5rem;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.item-task {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.delete-button {
+  grid-column: 2 / -1;
+  grid-row: 1 / 2;
+
+  display: grid;
+  justify-items: end;
+}
+
+hr {
+  border-color: #ebebeb;
+  margin: 0px;
+  grid-column: span 2;
+}
+
+form {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  text-align: center;
+
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: 5rem auto 4rem;
+}
+
+textarea {
+  cursor: pointer;
+  overflow-wrap: break-word;
+
+  font-size: 1.25rem;
+
+  border: 0px;
+  padding: 0.5rem 4.3rem 0.5rem 0.5rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: -1;
+}
+
+input[type="time"] {
+  cursor: pointer;
+  text-align: center;
+
+  border-width: 0px 1px 0px 0px;
+
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+input[type="time"]:focus {
+  z-index: 1;
+}
+
+.form-button {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+footer {
+  width: 100%;
+  min-height: 100%;
+  margin-top: auto;
+  text-align: center;
+  font-size: 1.25rem;
+}
