@@ -64,7 +64,7 @@ function App() {
   }
 
   return (
-    <div className='todo-app'>
+    <div>
       <Header />
       <div className='todo-display'>
         <DateHeader />
