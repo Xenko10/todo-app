@@ -2,11 +2,15 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Item(props) {
+  function handleClick() {
+    props.deleteTask(props.id);
+  }
+
   let deleteIcon;
   if (props.delete) {
     deleteIcon = (
       <div className='delete-button'>
-        <IconButton aria-label='delete'>
+        <IconButton aria-label='delete' onClick={handleClick}>
           <DeleteIcon />
         </IconButton>
       </div>

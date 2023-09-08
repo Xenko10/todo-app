@@ -12,7 +12,6 @@ function Form(props) {
         value={props.values.time}
       />
       <textarea
-        type='text'
         name='task'
         id='task'
         placeholder='Task'

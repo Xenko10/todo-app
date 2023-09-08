@@ -24,7 +24,7 @@ function DateHeader() {
   ];
   const date = new Date();
   return (
-    <h1>
+    <h1 className='date-header'>
       {date.getDate()} {monthNames[date.getMonth()]},{" "}
       {dayNames[date.getDay()].toLowerCase()}
     </h1>

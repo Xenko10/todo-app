@@ -1,3 +1,4 @@
+import Header from "./Header";
 import DateHeader from "./DateHeader";
 import Item from "./Item";
 import Form from "./Form";
@@ -36,19 +37,35 @@ function App() {
     event.preventDefault();
   }
 
-  function deleteTask(id) {}
+  function deleteTask(id) {
+    setTask((prevInput) => {
+      return prevInput.filter((inputItem, index) => {
+        return index !== id;
+      });
+    });
+  }
 
   let content;
   if (list.length === 0) {
     content = <Item time='now' task='Add new task down below!' delete={0} />;
   } else {
     content = list.map((task, index) => {
-      return <Item time={task.time} task={task.task} key={index} delete={1} />;
+      return (
+        <Item
+          time={task.time}
+          task={task.task}
+          key={index}
+          id={index}
+          delete={1}
+          deleteTask={deleteTask}
+        />
+      );
     });
   }
 
   return (
     <div className='todo-app'>
+      <Header />
       <div className='todo-display'>
         <DateHeader />
         {content}

@@ -6,6 +6,10 @@ body {
     rgba(213, 254, 255, 1) 20%,
     rgba(177, 233, 245, 1) 100%
   );
+  margin: 0px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-app {
@@ -16,13 +20,28 @@ body {
   min-height: 100vh;
 }
 
-.todo-display {
-  width: 37.5rem;
-  border-radius: 2rem;
-  background-color: white;
+.logo {
+  background-color: #176b87;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  font-size: 2.5rem;
+  color: white;
+
+  margin: 0px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+
+  align-self: start;
+  width: 100vw;
 }
 
-h1 {
+.todo-display {
+  width: 37.5rem;
+  border-radius: 2rem 2rem 0.25rem 0rem;
+  background-color: white;
+  box-shadow: 0 2px 5px #ccc;
+}
+
+.date-header {
   background: rgb(0, 242, 255);
   background: linear-gradient(
     90deg,
