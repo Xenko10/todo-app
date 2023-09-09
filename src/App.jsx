@@ -73,14 +73,18 @@ function App() {
       <div className='todo-display'>
         <DateHeader />
         {list.length ? (
-          <Item
-            time={task.time}
-            task={task.task}
-            key={index}
-            id={index}
-            delete={1}
-            deleteTask={deleteTask}
-          />
+          list.map((task, index) => {
+            return (
+              <Item
+                time={task.time}
+                task={task.task}
+                key={index}
+                id={index}
+                delete={1}
+                deleteTask={deleteTask}
+              />
+            );
+          })
         ) : (
           <Item time='now' task='Add new task down below!' delete={0} />
         )}
