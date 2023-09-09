@@ -20,7 +20,7 @@ body > div > div {
 /* header */
 
 .logo {
-  background-color: #0091ad;
+  background-color: #449dd1;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   font-size: 2.5rem;
   color: white;
@@ -49,11 +49,11 @@ body > div > div {
 /* date header */
 
 .date-header {
-  background: rgb(0, 242, 255);
+  background: rgb(62, 187, 255);
   background: linear-gradient(
     90deg,
-    rgba(0, 242, 255, 1) 0%,
-    rgba(0, 182, 255, 1) 100%
+    rgba(62, 187, 255, 1) 0%,
+    rgba(48, 161, 255, 1) 100%
   );
   box-shadow: 0 2px 5px #ccc;
 
@@ -111,7 +111,8 @@ h2 {
 }
 
 hr {
-  border-color: #ebebeb;
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
   margin: 0px;
   grid-column: span 2;
 }
@@ -166,10 +167,19 @@ input[type="time"]:focus {
 .form-button {
   grid-column-start: 3;
   grid-row-start: 1;
+
+  background: rgb(62, 187, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(62, 187, 255, 1) 0%,
+    rgba(48, 161, 255, 1) 100%
+  );
 }
 
 footer {
   margin-top: auto;
   text-align: center;
   font-size: 1.25rem;
+
+  color: #4b6982;
 }
