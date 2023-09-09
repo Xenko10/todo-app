@@ -67,30 +67,23 @@ function App() {
     });
   }
 
-  let content;
-  if (list.length === 0) {
-    content = <Item time='now' task='Add new task down below!' delete={0} />;
-  } else {
-    content = list.map((task, index) => {
-      return (
-        <Item
-          time={task.time}
-          task={task.task}
-          key={index}
-          id={index}
-          delete={1}
-          deleteTask={deleteTask}
-        />
-      );
-    });
-  }
-
   return (
     <div>
       <Header />
       <div className='todo-display'>
         <DateHeader />
-        {content}
+        {list.length ? (
+          <Item
+            time={task.time}
+            task={task.task}
+            key={index}
+            id={index}
+            delete={1}
+            deleteTask={deleteTask}
+          />
+        ) : (
+          <Item time='now' task='Add new task down below!' delete={0} />
+        )}
         <Form
           handleSubmit={handleSubmit}
           handleInput={handleInput}
