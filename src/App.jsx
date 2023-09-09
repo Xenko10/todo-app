@@ -85,7 +85,11 @@ export default function App() {
             );
           })
         ) : (
-          <Item time='now' task='Add new task down below!' />
+          <Item
+            time='now'
+            task='Add new task down below!'
+            deleteTask={(id) => {}}
+          />
         )}
         <Form
           handleSubmit={handleSubmit}
