@@ -10,7 +10,7 @@ body {
 
 /* site layout */
 
-body > div > div {
+body > div {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -68,7 +68,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <Header />
       <div className='todo-display'>
         <DateHeader />
@@ -98,6 +98,6 @@ export default function App() {
         />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
