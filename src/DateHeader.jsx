@@ -1,12 +1,12 @@
-function DateHeader() {
+export default function DateHeader() {
   const dayNames = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "sunday",
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
   ];
   const monthNames = [
     "January",
@@ -25,10 +25,7 @@ function DateHeader() {
   const date = new Date();
   return (
     <h1 className='date-header'>
-      {date.getDate()} {monthNames[date.getMonth()]},{" "}
-      {dayNames[date.getDay()].toLowerCase()}
+      {date.getDate()} {monthNames[date.getMonth()]}, {dayNames[date.getDay()]}
     </h1>
   );
 }
-
-export default DateHeader;

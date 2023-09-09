@@ -5,7 +5,7 @@ import Form from "./Form";
 import Footer from "./Footer";
 import { useState } from "react";
 
-function App() {
+export default function App() {
   const itemValue = sessionStorage.getItem("listSession");
   const initialList = itemValue ? JSON.parse(itemValue) : [];
   const [list, setTask] = useState(initialList);
@@ -80,13 +80,12 @@ function App() {
                 task={task.task}
                 key={index}
                 id={index}
-                delete={1}
                 deleteTask={deleteTask}
               />
             );
           })
         ) : (
-          <Item time='now' task='Add new task down below!' delete={0} />
+          <Item time='now' task='Add new task down below!' />
         )}
         <Form
           handleSubmit={handleSubmit}
@@ -98,5 +97,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

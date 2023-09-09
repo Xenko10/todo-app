@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 
-function Form(props) {
+export default function Form(props) {
   return (
     <form name='myForm' method='post' onSubmit={props.handleSubmit}>
       <input
@@ -28,5 +28,3 @@ function Form(props) {
     </form>
   );
 }
-
-export default Form;
