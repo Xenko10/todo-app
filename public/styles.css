@@ -187,3 +187,16 @@ footer {
 
   color: #4b6982;
 }
+
+@media (max-width: 650px) {
+  .todo-display {
+    width: auto;
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  form {
+    grid-template-columns: 4rem minmax(2rem, auto) 4rem;
+  }
+}
