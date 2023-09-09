@@ -6,7 +6,9 @@ import Footer from "./Footer";
 import { useState } from "react";
 
 function App() {
-  const [list, setTask] = useState([]);
+  const itemValue = sessionStorage.getItem("listSession");
+  const initialList = itemValue ? JSON.parse(itemValue) : [];
+  const [list, setTask] = useState(initialList);
 
   const [input, setInput] = useState({ time: "", task: "" });
 
@@ -27,7 +29,7 @@ function App() {
         temp.sort(function (a, b) {
           return a.time.localeCompare(b.time);
         });
-
+        sessionStorage.setItem("listSession", JSON.stringify(temp));
         return temp;
       });
       setInput({ time: "", task: "" });
@@ -57,9 +59,11 @@ function App() {
 
   function deleteTask(id) {
     setTask((prevInput) => {
-      return prevInput.filter((inputItem, index) => {
+      const updatedList = prevInput.filter((inputItem, index) => {
         return index !== id;
       });
+      sessionStorage.setItem("listSession", JSON.stringify(updatedList));
+      return updatedList;
     });
   }
 
