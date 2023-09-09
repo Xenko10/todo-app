@@ -10,9 +10,11 @@ export default function Item(props) {
     <div className='item'>
       <h2 className='item-time'>{props.time}</h2>
       <div className='delete-button'>
-        <IconButton aria-label='delete' onClick={handleClick}>
-          <DeleteIcon />
-        </IconButton>
+        {props.time !== "now" && (
+          <IconButton aria-label='delete' onClick={handleClick}>
+            <DeleteIcon />
+          </IconButton>
+        )}
       </div>
       <h2 className='item-task'>{props.task}</h2>
       <hr />

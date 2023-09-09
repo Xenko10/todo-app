@@ -88,7 +88,7 @@ export default function App() {
           <Item
             time='now'
             task='Add new task down below!'
-            deleteTask={(id) => {}}
+            deleteTask={() => {}}
           />
         )}
         <Form
