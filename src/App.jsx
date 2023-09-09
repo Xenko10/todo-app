@@ -32,7 +32,25 @@ function App() {
       });
       setInput({ time: "", task: "" });
     } else {
-      // error
+      const errorClass = "no-input-error";
+      if (input.time === "" && input.task === "") {
+        document.getElementById("time").classList.add(errorClass);
+        document.getElementById("task").classList.add(errorClass);
+        setTimeout(() => {
+          document.getElementById("time").classList.remove(errorClass);
+          document.getElementById("task").classList.remove(errorClass);
+        }, 2000);
+      } else if (input.time === "") {
+        document.getElementById("time").classList.add(errorClass);
+        setTimeout(() => {
+          document.getElementById("time").classList.remove(errorClass);
+        }, 2000);
+      } else {
+        document.getElementById("task").classList.add(errorClass);
+        setTimeout(() => {
+          document.getElementById("task").classList.remove(errorClass);
+        }, 2000);
+      }
     }
     event.preventDefault();
   }

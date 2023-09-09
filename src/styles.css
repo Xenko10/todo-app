@@ -40,6 +40,7 @@ body > div > div {
 
 .todo-display {
   margin-top: 4rem;
+  margin-bottom: 2rem;
 
   width: 37.5rem;
   border-radius: 2rem 2rem 0.25rem 0rem;
@@ -81,8 +82,6 @@ h2 {
   font-size: 1.75rem;
   color: #4b6982;
   overflow-wrap: break-word;
-
-  max-width: 25rem;
 
   margin-left: 1rem;
   margin-right: 1rem;
@@ -174,6 +173,11 @@ input[type="time"]:focus {
     rgba(62, 187, 255, 1) 0%,
     rgba(48, 161, 255, 1) 100%
   );
+}
+
+.no-input-error {
+  border: 2px red solid !important;
+  border-radius: 0.125rem;
 }
 
 footer {
