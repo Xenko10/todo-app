@@ -21,9 +21,7 @@ export default function useTodos() {
         if (input.time !== "" && input.task !== "") {
             setTask((prevInputs) => {
                 const temp = [...prevInputs, input];
-                temp.sort(function (a, b) {
-                    return a.time.localeCompare(b.time);
-                });
+                temp.sort((a, b) => a.time.localeCompare(b.time));
                 sessionStorage.setItem("listSession", JSON.stringify(temp));
                 return temp;
             });
