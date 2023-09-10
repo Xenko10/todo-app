@@ -17,7 +17,8 @@ export default function useTodos() {
         });
     }
 
-    function handleSubmit(event) {
+    function handleSubmit(e) {
+        e.preventDefault();
         const canSubmit = input.time !== "" && input.task !== "";
         if (canSubmit) {
             setList((prevInputs) => {
@@ -48,7 +49,6 @@ export default function useTodos() {
                 }, 2000);
             }
         }
-        event.preventDefault();
     }
 
     function deleteTask(id) {
