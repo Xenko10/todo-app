@@ -18,7 +18,8 @@ export default function useTodos() {
     }
 
     function handleSubmit(event) {
-        if (input.time !== "" && input.task !== "") {
+        const canSubmit = input.time !== "" && input.task !== "";
+        if (canSubmit) {
             setList((prevInputs) => {
                 const temp = [...prevInputs, input];
                 temp.sort((a, b) => a.time.localeCompare(b.time));
