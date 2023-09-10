@@ -3,7 +3,7 @@ import {useState} from "react";
 export default function useTodos() {
     const itemValue = sessionStorage.getItem("listSession");
     const initialList = itemValue ? JSON.parse(itemValue) : [];
-    const [list, setTask] = useState(initialList);
+    const [list, setList] = useState(initialList);
 
     const [input, setInput] = useState({ time: "", task: "" });
 
@@ -19,7 +19,7 @@ export default function useTodos() {
 
     function handleSubmit(event) {
         if (input.time !== "" && input.task !== "") {
-            setTask((prevInputs) => {
+            setList((prevInputs) => {
                 const temp = [...prevInputs, input];
                 temp.sort((a, b) => a.time.localeCompare(b.time));
                 sessionStorage.setItem("listSession", JSON.stringify(temp));
@@ -51,7 +51,7 @@ export default function useTodos() {
     }
 
     function deleteTask(id) {
-        setTask((prevInput) => {
+        setList((prevInput) => {
             const updatedList = prevInput.filter((inputItem, index) => {
                 return index !== id;
             });
