@@ -29,22 +29,18 @@ export default function useTodos() {
 
     function onError() {
         const errorClass = "no-input-error";
-        if (input.time === "" && input.task === "") {
-            document.getElementById("time").classList.add(errorClass);
-            document.getElementById("task").classList.add(errorClass);
+        if (input.time === "") {
+            const timeElement = document.getElementById("time");
+            timeElement.classList.add(errorClass);
             setTimeout(() => {
-                document.getElementById("time").classList.remove(errorClass);
-                document.getElementById("task").classList.remove(errorClass);
+                timeElement.classList.remove(errorClass);
             }, 2000);
-        } else if (input.time === "") {
-            document.getElementById("time").classList.add(errorClass);
+        }
+        if (input.task === "") {
+            const taskElement = document.getElementById("task");
+            taskElement.classList.add(errorClass);
             setTimeout(() => {
-                document.getElementById("time").classList.remove(errorClass);
-            }, 2000);
-        } else {
-            document.getElementById("task").classList.add(errorClass);
-            setTimeout(() => {
-                document.getElementById("task").classList.remove(errorClass);
+                taskElement.classList.remove(errorClass);
             }, 2000);
         }
     }
