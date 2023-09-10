@@ -6,7 +6,7 @@ import Footer from "./Footer";
 import useTodos from "./useTodos";
 
 export default function App() {
-  const {deleteTask, handleInput, handleSubmit, list, input} = useTodos()
+  const {deleteTask, handleInput, handleSubmit, list, input, isTaskError, isTimeError} = useTodos()
 
   return (
     <>
@@ -36,6 +36,8 @@ export default function App() {
           handleSubmit={handleSubmit}
           handleInput={handleInput}
           values={input}
+          isTaskError={isTaskError}
+          isTimeError={isTimeError}
         />
       </div>
       <Footer />

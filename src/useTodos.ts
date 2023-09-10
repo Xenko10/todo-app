@@ -5,17 +5,21 @@ export default function useTodos() {
     const initialList = itemValue ? JSON.parse(itemValue) : [];
     const [list, setList] = useState(initialList);
 
+
     const [input, setInput] = useState({ time: "", task: "" });
 
+    const [isTaskError, setIsTaskError] = useState(false)
+    const [isTimeError, setIsTimeError] = useState(false)
+
     function handleInput(event) {
-        const { name, value } = event.target;
-        setInput((prevInput) => {
-            return {
-                ...prevInput,
-                [name]: value,
-            };
-        });
-    }
+    const { name, value } = event.target;
+    setInput((prevInput) => {
+        return {
+            ...prevInput,
+            [name]: value,
+        };
+    });
+}
 
     function submit() {
         setList((prevInputs) => {
@@ -28,20 +32,17 @@ export default function useTodos() {
     }
 
     function onError() {
-        const errorClass = "no-input-error";
         if (input.time === "") {
-            const timeElement = document.getElementById("time");
-            timeElement.classList.add(errorClass);
+            setIsTimeError(true);
             setTimeout(() => {
-                timeElement.classList.remove(errorClass);
-            }, 2000);
+                setIsTimeError(false);
+            }, 2000)
         }
         if (input.task === "") {
-            const taskElement = document.getElementById("task");
-            taskElement.classList.add(errorClass);
+            setIsTaskError(true);
             setTimeout(() => {
-                taskElement.classList.remove(errorClass);
-            }, 2000);
+                setIsTaskError(false);
+            }, 2000)
         }
     }
 
@@ -71,5 +72,7 @@ export default function useTodos() {
         handleInput,
         handleSubmit,
         deleteTask,
+        isTaskError,
+        isTimeError
     }
 }
