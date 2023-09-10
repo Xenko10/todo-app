@@ -17,19 +17,17 @@ export default function useTodos() {
         });
     }
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        const canSubmit = input.time !== "" && input.task !== "";
-        if (canSubmit) {
-            setList((prevInputs) => {
-                const temp = [...prevInputs, input];
-                temp.sort((a, b) => a.time.localeCompare(b.time));
-                sessionStorage.setItem("listSession", JSON.stringify(temp));
-                return temp;
-            });
-            setInput({ time: "", task: "" });
-            return
-        }
+    function submit() {
+        setList((prevInputs) => {
+            const temp = [...prevInputs, input];
+            temp.sort((a, b) => a.time.localeCompare(b.time));
+            sessionStorage.setItem("listSession", JSON.stringify(temp));
+            return temp;
+        });
+        setInput({ time: "", task: "" });
+    }
+
+    function onError() {
         const errorClass = "no-input-error";
         if (input.time === "" && input.task === "") {
             document.getElementById("time").classList.add(errorClass);
@@ -49,6 +47,16 @@ export default function useTodos() {
                 document.getElementById("task").classList.remove(errorClass);
             }, 2000);
         }
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const canSubmit = input.time !== "" && input.task !== "";
+        if (canSubmit) {
+            submit();
+            return;
+        }
+        onError();
     }
 
     function deleteTask(id) {
