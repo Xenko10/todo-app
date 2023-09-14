@@ -1,8 +1,8 @@
-import {number, string, func} from 'prop-types'
+import { number, string, func } from "prop-types";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function Item({time,deleteTask,id,task}) {
+export default function Item({ time, deleteTask, id, task }) {
   function handleClick() {
     deleteTask(id);
   }
@@ -24,8 +24,8 @@ export default function Item({time,deleteTask,id,task}) {
 }
 
 Item.propTypes = {
-    id: number.isRequired,
-    time: string.isRequired,
-    task: string.isRequired,
-    deleteTask: func.isRequired,
-}
+  id: string.isRequired,
+  time: string.isRequired,
+  task: string.isRequired,
+  deleteTask: func.isRequired,
+};

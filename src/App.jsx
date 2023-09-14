@@ -4,9 +4,18 @@ import Item from "./Item";
 import Form from "./Form";
 import Footer from "./Footer";
 import useTodos from "./useTodos";
+import { v4 as uuidv4 } from "uuid";
 
 export default function App() {
-  const {deleteTask, handleInput, handleSubmit, list, input, isTaskError, isTimeError} = useTodos()
+  const {
+    deleteTask,
+    handleInput,
+    handleSubmit,
+    list,
+    input,
+    isTaskError,
+    isTimeError,
+  } = useTodos();
 
   return (
     <>
@@ -14,13 +23,13 @@ export default function App() {
       <div className='todo-display'>
         <DateHeader />
         {list.length ? (
-          list.map((task, index) => {
+          list.map((task) => {
             return (
               <Item
                 time={task.time}
                 task={task.task}
-                key={index}
-                id={index}
+                key={task.id}
+                id={task.id}
                 deleteTask={deleteTask}
               />
             );
@@ -30,6 +39,8 @@ export default function App() {
             time='now'
             task='Add new task down below!'
             deleteTask={() => {}}
+            key={"0"}
+            id={"0"}
           />
         )}
         <Form
