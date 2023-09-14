@@ -4,7 +4,6 @@ import Item from "./Item";
 import Form from "./Form";
 import Footer from "./Footer";
 import useTodos from "./useTodos";
-import { v4 as uuidv4 } from "uuid";
 
 export default function App() {
   const {

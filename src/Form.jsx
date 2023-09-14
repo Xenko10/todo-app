@@ -1,30 +1,36 @@
 import Button from "@mui/material/Button";
 
-export default function Form(props) {
+export default function Form({
+  handleSubmit,
+  handleInput,
+  values,
+  isTaskError,
+  isTimeError,
+}) {
   return (
-    <form name='myForm' method='post' onSubmit={props.handleSubmit}>
+    <form name='myForm' method='post' onSubmit={handleSubmit}>
       <input
         type='time'
         name='time'
         id='time'
-        className={props.isTimeError ? "no-input-error" : ""}
+        className={isTimeError ? "no-input-error" : ""}
         placeholder='Time'
-        onChange={props.handleInput}
-        value={props.values.time}
+        onChange={handleInput}
+        value={values.time}
       />
       <textarea
         name='task'
         id='task'
         placeholder='Task'
-        className={props.isTaskError ? "no-input-error" : ""}
-        onChange={props.handleInput}
-        value={props.values.task}
+        className={isTaskError ? "no-input-error" : ""}
+        onChange={handleInput}
+        value={values.task}
         maxLength='100'
       />
       <Button
         variant='contained'
         className='form-button'
-        onClick={props.handleSubmit}>
+        onClick={handleSubmit}>
         Add
       </Button>
     </form>
