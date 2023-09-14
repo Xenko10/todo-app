@@ -7,6 +7,7 @@ export default function Form(props) {
         type='time'
         name='time'
         id='time'
+        className={props.isTimeError ? "no-input-error" : ""}
         placeholder='Time'
         onChange={props.handleInput}
         value={props.values.time}
@@ -15,6 +16,7 @@ export default function Form(props) {
         name='task'
         id='task'
         placeholder='Task'
+        className={props.isTaskError ? "no-input-error" : ""}
         onChange={props.handleInput}
         value={props.values.task}
         maxLength='100'
