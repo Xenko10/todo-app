@@ -11,6 +11,15 @@ export default function useTodos() {
   const [isTaskError, setIsTaskError] = useState(false);
   const [isTimeError, setIsTimeError] = useState(false);
 
+  function isDuplicate(input) {
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].time === input.time && list[i].task === input.task) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   function handleInput(event) {
     const { name, value } = event.target;
     setInput((prevInput) => {
@@ -22,24 +31,27 @@ export default function useTodos() {
   }
 
   function submit() {
+    if (isDuplicate(input)) {
+      onError();
+      return;
+    }
     setList((prevInputs) => {
       const temp = [...prevInputs, input];
       temp.sort((a, b) => a.time.localeCompare(b.time));
       sessionStorage.setItem("listSession", JSON.stringify(temp));
       return temp;
     });
-    const uuid = uuidv4();
-    setInput({ time: "", task: "", id: uuid });
+    setInput({ time: "", task: "", id: uuidv4() });
   }
 
   function onError() {
-    if (input.time === "") {
+    if (input.time === "" || isDuplicate(input)) {
       setIsTimeError(true);
       setTimeout(() => {
         setIsTimeError(false);
       }, 2000);
     }
-    if (input.task === "") {
+    if (input.task === "" || isDuplicate(input)) {
       setIsTaskError(true);
       setTimeout(() => {
         setIsTaskError(false);

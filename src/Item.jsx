@@ -1,4 +1,4 @@
-import { number, string, func } from "prop-types";
+import { string, func } from "prop-types";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
