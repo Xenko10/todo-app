@@ -2,10 +2,10 @@ body {
   background: rgb(202, 248, 255);
   background: linear-gradient(
     90deg,
-    rgba(202, 248, 255, 1) 0%,
+    rgba(202, 248, 255, 1) 0,
     rgba(141, 236, 255, 1) 100%
   );
-  margin: 0px;
+  margin: 0;
 }
 
 /* site layout */
@@ -25,7 +25,7 @@ body > div {
   font-size: 2.5rem;
   color: white;
 
-  margin: 0px;
+  margin: 0;
   padding: 1.5rem;
 
   box-sizing: border-box;
@@ -43,7 +43,7 @@ body > div {
   margin-bottom: 2rem;
 
   width: 37.5rem;
-  border-radius: 2rem 2rem 0.25rem 0rem;
+  border-radius: 2rem 2rem 0.25rem 0;
   box-shadow: 0 2px 5px #ccc;
 }
 
@@ -53,12 +53,12 @@ body > div {
   background: rgb(62, 187, 255);
   background: linear-gradient(
     90deg,
-    rgba(62, 187, 255, 1) 0%,
+    rgba(62, 187, 255, 1) 0,
     rgba(48, 161, 255, 1) 100%
   );
   box-shadow: 0 2px 5px #ccc;
 
-  margin: 0px;
+  margin: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   padding: 2rem;
@@ -85,7 +85,7 @@ h2 {
 
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .item-time {
@@ -112,7 +112,7 @@ h2 {
 hr {
   background-color: #f0f0f0;
   border-color: #f0f0f0;
-  margin: 0px;
+  margin: 0;
   grid-column: span 2;
 }
 
@@ -139,7 +139,7 @@ textarea {
 
   font-size: 1.25rem;
 
-  border: 0px;
+  border: 0;
   padding: 0.5rem 4.3rem 0.5rem 0.5rem;
   height: 3rem;
   border-radius: 0.25rem;
@@ -153,7 +153,7 @@ input[type="time"] {
   cursor: pointer;
   text-align: center;
 
-  border-width: 0px 1px 0px 0px;
+  border-width: 0 1px 0 0;
 
   grid-column-start: 1;
   grid-row-start: 1;
@@ -170,7 +170,7 @@ input[type="time"]:focus {
   background: rgb(62, 187, 255);
   background: linear-gradient(
     90deg,
-    rgba(62, 187, 255, 1) 0%,
+    rgba(62, 187, 255, 1) 0,
     rgba(48, 161, 255, 1) 100%
   );
 }

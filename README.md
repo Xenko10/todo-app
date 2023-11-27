@@ -4,5 +4,5 @@
    - cd todo-app
    - yarn
 2. Run the following.
-   - yarn dev
+   - yarn start
    - open http://localhost:5173
