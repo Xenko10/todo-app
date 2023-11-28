@@ -13,7 +13,7 @@ export default function Form({
         type='time'
         name='time'
         id='time'
-        className={isTimeError ? "no-input-error" : ""}
+        className={isTimeError ? "no-input-error" : null}
         placeholder='Time'
         onChange={handleInput}
         value={values.time}
@@ -22,7 +22,7 @@ export default function Form({
         name='task'
         id='task'
         placeholder='Task'
-        className={isTaskError ? "no-input-error" : ""}
+        className={isTaskError ? "no-input-error" : null}
         onChange={handleInput}
         value={values.task}
         maxLength='100'
