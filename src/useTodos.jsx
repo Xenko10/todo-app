@@ -30,11 +30,18 @@ export default function useTodos() {
     });
   }
 
-  function submit() {
-    if (isDuplicate(input)) {
-      onError();
+  function handleSubmit(e) {
+    e.preventDefault();
+    const canSubmit =
+      input.time !== "" && input.task !== "" && !isDuplicate(input);
+    if (canSubmit) {
+      submit();
       return;
     }
+    onError();
+  }
+
+  function submit() {
     const toSubmit = {
       ...input,
       id: uuidv4(),
@@ -63,19 +70,9 @@ export default function useTodos() {
     }
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const canSubmit = input.time !== "" && input.task !== "";
-    if (canSubmit) {
-      submit();
-      return;
-    }
-    onError();
-  }
-
   function deleteTask(id) {
     setList((prevInput) => {
-      const updatedList = prevInput.filter((inputItem, index) => {
+      const updatedList = prevInput.filter((inputItem) => {
         return inputItem.id !== id;
       });
       sessionStorage.setItem("listSession", JSON.stringify(updatedList));
