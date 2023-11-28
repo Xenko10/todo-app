@@ -6,7 +6,7 @@ export default function useTodos() {
   const initialList = itemValue ? JSON.parse(itemValue) : [];
   const [list, setList] = useState(initialList);
 
-  const [input, setInput] = useState({ time: "", task: "", id: uuidv4() });
+  const [input, setInput] = useState({ time: "", task: "" });
 
   const [isTaskError, setIsTaskError] = useState(false);
   const [isTimeError, setIsTimeError] = useState(false);
@@ -35,13 +35,17 @@ export default function useTodos() {
       onError();
       return;
     }
+    const toSubmit = {
+      ...input,
+      id: uuidv4(),
+    };
     setList((prevInputs) => {
-      const temp = [...prevInputs, input];
+      const temp = [...prevInputs, toSubmit];
       temp.sort((a, b) => a.time.localeCompare(b.time));
       sessionStorage.setItem("listSession", JSON.stringify(temp));
       return temp;
     });
-    setInput({ time: "", task: "", id: uuidv4() });
+    setInput({ time: "", task: "" });
   }
 
   function onError() {
