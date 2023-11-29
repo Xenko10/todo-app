@@ -70,26 +70,26 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
-h2 {
-  font-weight: normal;
-  font-size: 1.75rem;
-  color: #4b6982;
-  overflow-wrap: break-word;
-
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 0;
+.item h2 {
+  margin: 0 1rem 1.25rem 1rem;
 }
 
 .item-time {
-  padding-top: 0.75rem;
   color: #bababa;
+  font-weight: normal;
+  padding-top: 0.75rem;
+
   font-size: 1.5rem;
   grid-column: 1 / span 2;
   grid-row: 1;
 }
 
 .item-task {
+  color: #4b6982;
+  font-size: 1.75rem;
+  font-weight: normal;
+  overflow-wrap: break-word;
+
   grid-column: 1 / span 2;
   grid-row: 2;
 }
