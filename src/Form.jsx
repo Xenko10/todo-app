@@ -8,12 +8,16 @@ export default function Form({
   isTimeError,
 }) {
   return (
-    <form name='myForm' method='post' onSubmit={handleSubmit}>
+    <form
+      className='todo-form'
+      name='myForm'
+      method='post'
+      onSubmit={handleSubmit}>
       <input
         type='time'
         name='time'
         id='time'
-        className={isTimeError ? "no-input-error" : null}
+        className={isTimeError ? "input-time no-input-error" : "input-time"}
         placeholder='Time'
         onChange={handleInput}
         value={values.time}
@@ -22,7 +26,7 @@ export default function Form({
         name='task'
         id='task'
         placeholder='Task'
-        className={isTaskError ? "no-input-error" : null}
+        className={isTaskError ? "input-text no-input-error" : "input-text"}
         onChange={handleInput}
         value={values.task}
         maxLength='100'
