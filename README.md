@@ -1,7 +1,7 @@
 <div align="center">
-    <h2>Todo App preview</h3>
+    <h2>Todo App preview</h2>
 <img src="./img/todo_app.png" alt="Todo App preview">
-    <h2>Same page after deleting some tasks</h3>
+    <h2>Same page after deleting some tasks</h2>
 <img src="./img/after_deleting_tasks.png" alt="Todo App after deleting some tasks">
 </div>
 
